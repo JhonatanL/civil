@@ -2,14 +2,20 @@
 	display flex
 	height 100%
 	align-items center
-	width 150px
+	width 120px
 	justify-content space-around
 	&__item
 		color #fff
-		font-size 20px
+		font-size 16px
 		transition color .3s
+		display flex
+		align-items center
 		&:hover
 			color var(--c-primary)
+		span
+			font-size 24px
+			margin-right 5px
+			
 	@media screen and (max-width 768px)
 		width 100%
 		padding 30px 0

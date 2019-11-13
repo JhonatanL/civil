@@ -11,6 +11,7 @@
 	align-items center
 	img
 		display block
+		
 		// width 100%
 	&__datos
 		position absolute
@@ -23,9 +24,8 @@
 		justify-content center
 		background-color rgba(#fff,.8)
 		transition all .3s
-		border 2px solid var(--c-primary)
+		border 1px solid #ccc
 		border-radius 10px
-		
 	&__name
 		text-align center
 		h2
@@ -38,3 +38,23 @@
 	&:hover
 		.docente__datos
 			transform scale(1)
+	&.auto
+		height 180px
+.autoridad
+	width: 300px
+	margin auto
+	border-radius 20px
+	overflow hidden
+	&__name
+		font-style italic
+		font-weight bold
+		margin 10px 0
+
+.img-title
+	text-align center
+	margin 10px 0
+	display block
+	font-weight bold
+.img-sub-title
+	font-style italic
+	text-align center	

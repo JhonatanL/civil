@@ -846,7 +846,7 @@
 </body>
 
 <link rel="stylesheet" href="css/estilos.css">
-<link rel="stylesheet" href="css/all.min.css">
+<!-- <link rel="stylesheet" href="css/all.min.css"> -->
 <link rel="stylesheet" href="css/bootstrap-min.css">
 
 <script>
@@ -854,12 +854,35 @@
 		var menu = document.getElementById('menu');
 		menu.classList.toggle("active");
 	}
+// fallback function for Font Awesome
+	function ensureCssFileInclusion(cssFileToCheck) {
+		var styleSheets = document.styleSheets;
+		for (var i = 0, max = styleSheets.length; i < max; i++) {
+			if (styleSheets[i].href == cssFileToCheck) {
+				return;
+			}
+		}
+		// because no matching stylesheets were found, we will add a new HTML link element to the HEAD section of the page.
+		var link = document.createElement("link");
+		link.rel = "stylesheet";
+		link.href = "https://civil.undac.edu.pe/css/all.min.css";
+		document.getElementsByTagName("head")[0].appendChild(link);
+	}
 
+	//call function
+	ensureCssFileInclusion("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 </script>
 <script src='js/jquery.js'></script>
 <script src='js/bootstrap.min.js'></script>
+<script  src ="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script> 
+<script>
+	WebFont.load({ 
+		google:{
+			familias : ['Droid Sans','Droid Serif']
+		}
+	});
+</script>
 <!-- 
-	
 <script>
 // Check that service workers are supported
 	if ('serviceWorker' in navigator) {
